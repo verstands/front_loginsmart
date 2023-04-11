@@ -10,10 +10,9 @@ const FicheTechnique = () => {
    const [vehicule, setvehicule] = useState([])
    let token = `Bearer ${localStorage.getItem("token")}` ;
    let n = 1;
-   const url = `http://localhost:5000/api/recherche_consomation/${un}/${deux}`;	
+   const url = `http://localhost:5000/api/recherche_consom/${un}/${deux}`;	
    const RechercheBtn = () => {
       setLoading(true)
-      
       axios.get(url,
           {
               headers : {
@@ -23,7 +22,7 @@ const FicheTechnique = () => {
               }
           }
       ).then((response) => {
-              setdata(response.data.data);
+              setvehicule(response.data.data);
               setLoading(false)
           
       }).catch((error) => {

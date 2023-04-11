@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar";
+import Rappport_carburant_vehicule_site from "./tab_rapport/vehicule_site";
 
 const Rapport_carburant = () => {
     return(
@@ -53,7 +54,7 @@ const Rapport_carburant = () => {
                         <div class="tab-content tabcontent-border">
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="p-20">
-                                    
+                                    <Rappport_carburant_vehicule_site/>   
                                 </div>
                             </div>
                             <div class="tab-pane p-20" id="profile" role="tabpanel">

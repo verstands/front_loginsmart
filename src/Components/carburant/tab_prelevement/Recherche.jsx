@@ -13,7 +13,6 @@ let token = `Bearer ${localStorage.getItem("token")}` ;
 
 const RechercheBtn = () => {
         setLoading(true)
-        
         axios.get(url,
             {
                 headers : {
@@ -25,7 +24,6 @@ const RechercheBtn = () => {
         ).then((response) => {
                 setdata(response.data.data);
                 setLoading(false)
-            
         }).catch((error) => {
             if(error.response.status === 404){
                 Swal.fire({

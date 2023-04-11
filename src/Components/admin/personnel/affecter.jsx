@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios";
 const Affecter = () => {
-    let token = 'Bearer 1|XXfI3BOr01VoBYgF8nC27oD7KEN1Oh3EULg68Q4a';
     const [chauffeur, setchauffeur] = useState([]);
     const [affectation, setaffectation] = useState([]);
     const [chauffeurs, setchauffeurs] = useState('');
     const [site, setsite] = useState('');
     const [dates, setdates] = useState('');
+
+    let token = `Bearer ${localStorage.getItem("token")}` ;
+    const url = 'http://localhost:5000/api/chauffeur';
     useEffect(() => {
         axios.get(`http://localhost:5000/api/chauffeur`,
             {

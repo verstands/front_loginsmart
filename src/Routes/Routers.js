@@ -12,8 +12,9 @@ import AffectationGeneral from "../Components/generateur/affectation";
 import Edition_vehicule from "../Components/vehicule/edition";
 import Deletes from "../Components/delete";
 import Generateur_vehicule from "../Components/carburant/generateur";
-import Rapport_carburant from "../Components/carburant/generateur";
+import Rapport_carburant from "../Components/carburant/rapport_carburant";
 import Vehicule_maintenance from "../Components/maintenance/vehicule";
+import Generateur_maintenace from "../Components/maintenance/generateur";
 
 class Routers extends Component{
     render(){
@@ -31,8 +32,9 @@ class Routers extends Component{
                 <Route path="/editio_vehicule" element={<Edition_vehicule />}  />
                 <Route path="/deletesuccess" element={<Deletes />}  />
                 <Route path="/rapport_carburant" element={<Rapport_carburant />}  />
-                <Route path="/generateur_vehicule" element={<Generateur_vehicule />}  />
-                <Route path="/vehicule_maintenacne" element={<Vehicule_maintenance />}  />
+                <Route path="/generateur_vehicule" element={<Generateur_vehicule />} />
+                <Route path="/vehicule_maintenance" element={<Vehicule_maintenance />} />
+                <Route path="/Generateur_maintenace" element={<Generateur_maintenace />} />
             </Routes>
         )
     }

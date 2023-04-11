@@ -323,16 +323,14 @@ const Navbar = () => {
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <a href="{{ route('maintenance_vehicule')}}" className="sidebar-link"
+                    <Link to="/vehicule_maintenance" className="sidebar-link"
                       ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Vehicule </span></a
-                    >
+                      ><span className="hide-menu"> Vehicule </span></Link>
                   </li>
                   <li className="sidebar-item">
-                    <a href="{{ route('maintenance_generateur')}}" className="sidebar-link"
+                    <Link to="/Generateur_maintenace" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Generateurs </span></a
-                    >
+                      ><span className="hide-menu"> Generateurs </span></Link>
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('maintenance_rapport')}}" className="sidebar-link"
