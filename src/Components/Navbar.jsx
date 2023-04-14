@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+    let Stat = `${localStorage.getItem("statut")}`;
     return (
         <>
           <header className="topbar" data-navbarbg="skin5">
@@ -441,38 +442,43 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-              <li className="sidebar-item">
-                <a
-                  className="sidebar-link has-arrow waves-effect waves-dark"
-                  href="javascript:void(0)"
-                  aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i
-                  ><span className="hide-menu">Administrateur </span></a
-                >
-                <ul aria-expanded="false" className="collapse first-level">
-                  <li className="sidebar-item">
-                    <Link to="/location" className="sidebar-link"
-                      ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Localisation </span></Link>
-                  </li>
-                  <li className="sidebar-item">
-                    <Link to="/Personnel" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i>
-                      <span className="hide-menu"> Personnel </span></Link>
-                  </li>
-                  <li className="sidebar-item">
-                    <Link to="/ajouterUtilisateur" className="sidebar-link"
-                      ><i className="fa fa-user"></i
-                      ><span className="hide-menu"> Utiliasteurs </span></Link>
-                  </li>
-                  <li className="sidebar-item">
-                    <a href="form-wizard.html" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Fournisseurs </span></a
-                    >
-                  </li>
-                </ul>
-              </li>
+                {
+                    Stat === "Admin" && (
+                      <li className="sidebar-item">
+                           <a
+                            className="sidebar-link has-arrow waves-effect waves-dark"
+                            href="javascript:void(0)"
+                            aria-expanded="false"
+                            ><i className="mdi mdi-receipt"></i
+                            ><span className="hide-menu">Administrateur </span></a
+                            >
+                            <ul aria-expanded="false" className="collapse first-level">
+                              <li className="sidebar-item">
+                                <Link to="/location" className="sidebar-link"
+                                  ><i className="mdi mdi-note-outline"></i
+                                  ><span className="hide-menu"> Localisation </span></Link>
+                              </li>
+                              <li className="sidebar-item">
+                                <Link to="/Personnel" className="sidebar-link"
+                                  ><i className="mdi mdi-note-plus"></i>
+                                  <span className="hide-menu"> Personnel </span></Link>
+                              </li>
+                              <li className="sidebar-item">
+                                <Link to="/ajouterUtilisateur" className="sidebar-link"
+                                  ><i className="fa fa-user"></i
+                                  ><span className="hide-menu"> Utiliasteurs </span></Link>
+                              </li>
+                              <li className="sidebar-item">
+                                <a href="form-wizard.html" className="sidebar-link"
+                                  ><i className="mdi mdi-note-plus"></i
+                                  ><span className="hide-menu"> Fournisseurs </span></a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                    )
+                }
+              
               <li className="sidebar-item">
                 <a
                   className="sidebar-link has-arrow waves-effect waves-dark"

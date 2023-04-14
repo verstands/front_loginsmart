@@ -65,21 +65,25 @@ const Prelevement = () => {
     const [chauffeur,  setchauffeur] = useState([]);
     const [vehicule,  setvehicule] = useState([]);
     let n = 1;
+    const sites = localStorage.getItem("site")
+    sites.map((r) => {
+        console.log(r.idSite)
+    })
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/plein`,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
-                }
+        axios.get(`http://localhost:5000/api/plein/1`,
+        {
+            headers : {
+                Accept: 'application/json',
+                'Content-Type' : 'application/json',
+                Authorization : token
             }
+        }
         ).then((response) => {
             setplain(response.data.data);
             setLoading(false);
         }).catch((error) => {
-            alert(error)
-        })
+           
+        }) 
     }, [])
     useEffect(() => {
         axios.get(`http://localhost:5000/api/chauffeur`,
@@ -169,10 +173,11 @@ const Prelevement = () => {
                         <tr>
                           <th>N°</th>
                           <th>immatriculation</th>
-                          <th>Utilisateur</th>
-                          <th>Matricule</th>
                           <th>Qte</th>
                           <th>Kilometrage</th>
+                          <th>Date</th>
+                          <th>Utilisateur</th>
+                          <th>Date</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -181,16 +186,25 @@ const Prelevement = () => {
                                 plein.map((e) => {
                                     return (
                                         <tr>
+                                            
                                             <td>{n++}</td>
                                             <td>{e.immatriculation}</td>
-                                            <td>{e.user}</td>
-                                            <td>{e.matricule_ch}</td>
                                             <td>{e.qteplein}</td>
                                             <td>{e.kilometrage}</td>
+                                            <td>{e.date_plein}</td>
+                                            <td>{e.nom}</td>
+                                            <td>{e.kilometrage}</td>
                                             <td>
-                                                <button onClick={ () => Deleteprelevement(e.id)} className="fa fa-edit btn btn-danger"></button>&nbsp;
-                                                <button onClick={() => UpdateId(e.id)}  data-bs-toggle="modal" data-bs-target="#updatePrelevements" className="fa fa-edit btn btn-primary"></button>
+                                                {
+                                                     e.type_acces === "Reading" && (
+                                                        <>
+                                                          <button onClick={ () => Deleteprelevement(e.id)} className="fa fa-edit btn btn-danger"></button>&nbsp;
+                                                            <button onClick={() => UpdateId(e.id)}  data-bs-toggle="modal" data-bs-target="#updatePrelevements" className="fa fa-edit btn btn-primary"></button>
+                                                        </>
+                                                    )
+                                                }
                                             </td>
+                                                   
                                         </tr>
                                     );
                                 })

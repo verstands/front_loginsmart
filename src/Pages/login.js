@@ -17,10 +17,18 @@ function LoginA(){
             {email : Email, mot : Password}).then((response) => {
                 let token=JSON.stringify(response.data.token);
                 let tokenT=token.substring(1,token.length-1);
-                let ville=JSON.stringify(response.data.data.ville);
-                let villeT=ville.substring(1,ville.length-1);
+
+                let site=JSON.stringify(response.data.sites);
+                let siteT=site.substring(1,site.length-1);
+
+                let data=JSON.stringify(response.data.data);
+                let dataT=data.substring(1,data.length-1);
+
                 localStorage.setItem("token", tokenT)
-                localStorage.setItem("ville", villeT)
+                localStorage.setItem("site", siteT)
+                localStorage.setItem("data", dataT)
+
+                console.log(localStorage.getItem("site"))
                 navigation('/dashboad')
                 setloading(false)
             }).catch((error) => {
@@ -36,6 +44,13 @@ function LoginA(){
                     Swal.fire({
                       icon : 'info',
                       title: 'Erreur de la connexion !!!',
+                      text : '',
+                    })
+                    setloading(false)
+                 }else if(error.response.status === 404){
+                    Swal.fire({
+                      icon : 'info',
+                      title: 'Service non trouvée !!!',
                       text : '',
                     })
                     setloading(false)
