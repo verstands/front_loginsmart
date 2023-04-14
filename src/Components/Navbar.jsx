@@ -442,8 +442,6 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-                {
-                    Stat === "Admin" && (
                       <li className="sidebar-item">
                            <a
                             className="sidebar-link has-arrow waves-effect waves-dark"
@@ -476,8 +474,6 @@ const Navbar = () => {
                               </li>
                             </ul>
                           </li>
-                    )
-                }
               
               <li className="sidebar-item">
                 <a

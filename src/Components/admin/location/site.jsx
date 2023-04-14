@@ -89,6 +89,7 @@ const Site = () => {
             }
         ).then((response) => {
             setsite(response.data.data);
+            setLoading(false)
         }).catch((error) => {
             alert(error)
         })
@@ -119,7 +120,7 @@ const Site = () => {
                   <div className="table-responsive">
                     <table
                       id="zero_config"
-                      className="table table-striped table-bordered"
+                      class="table table-striped table-bordered"
                     >
                       <thead>
                         <tr>

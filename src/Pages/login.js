@@ -19,13 +19,13 @@ function LoginA(){
                 let tokenT=token.substring(1,token.length-1);
 
                 let site=JSON.stringify(response.data.sites);
-                let siteT=site.substring(1,site.length-1);
+               
 
                 let data=JSON.stringify(response.data.data);
                 let dataT=data.substring(1,data.length-1);
 
                 localStorage.setItem("token", tokenT)
-                localStorage.setItem("site", siteT)
+                localStorage.setItem("site", site)
                 localStorage.setItem("data", dataT)
 
                 console.log(localStorage.getItem("site"))

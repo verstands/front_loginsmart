@@ -65,25 +65,26 @@ const Prelevement = () => {
     const [chauffeur,  setchauffeur] = useState([]);
     const [vehicule,  setvehicule] = useState([]);
     let n = 1;
-    const sites = localStorage.getItem("site")
-    sites.map((r) => {
-        console.log(r.idSite)
-    })
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/plein/1`,
-        {
-            headers : {
-                Accept: 'application/json',
-                'Content-Type' : 'application/json',
-                Authorization : token
-            }
+        const sites = JSON.parse(localStorage.getItem("site"))
+        if(sites != ""){
+            sites.map((sit) => {
+                axios.get(`http://localhost:5000/api/plein/${sit.idSite}`,
+                {
+                    headers : {
+                        Accept: 'application/json',
+                        'Content-Type' : 'application/json',
+                        Authorization : token
+                    }
+                }
+                ).then((response) => {
+                    setplain(response.data.data);
+                    setLoading(false);
+                }).catch((error) => {
+                
+                }) 
+            })
         }
-        ).then((response) => {
-            setplain(response.data.data);
-            setLoading(false);
-        }).catch((error) => {
-           
-        }) 
     }, [])
     useEffect(() => {
         axios.get(`http://localhost:5000/api/chauffeur`,

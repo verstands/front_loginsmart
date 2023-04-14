@@ -9,20 +9,26 @@ const AffchageTous = () => {
     const [update, setupdate] = useState([]);
     let n = 1
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/plein`,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
+        const sites = JSON.parse(localStorage.getItem("site"))
+        if(sites != ""){
+                sites.map((sit) => {
+                    axios.get(`http://localhost:5000/api/plein/${sit.idSite}`,
+                {
+                    headers : {
+                        Accept: 'application/json',
+                        'Content-Type' : 'application/json',
+                        Authorization : token
+                    }
                 }
-            }
-        ).then((response) => {
-            setplain(response.data.data);
-        }).catch((error) => {
-            alert(error)
-        })
+                ).then((response) => {
+                    setplain(response.data.data);
+                }).catch((error) => {
+                    alert(error)
+                })
+            })
+        }
     }, [])
+
     const UpdateId = (id) => {
       setloadingD(true)
       let urlDetail = `http://localhost:5000/api/plein/${id}`;
