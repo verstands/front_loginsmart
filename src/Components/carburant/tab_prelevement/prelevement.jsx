@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const Prelevement = () => {
+const   Prelevement = () => {
     //formulaire
     let token = `Bearer ${localStorage.getItem("token")}` ;
     const [numBon, setnumBon] = useState("");
@@ -196,14 +196,10 @@ const Prelevement = () => {
                                             <td>{e.nom}</td>
                                             <td>{e.kilometrage}</td>
                                             <td>
-                                                {
-                                                     e.type_acces === "Reading" && (
-                                                        <>
-                                                          <button onClick={ () => Deleteprelevement(e.id)} className="fa fa-edit btn btn-danger"></button>&nbsp;
-                                                            <button onClick={() => UpdateId(e.id)}  data-bs-toggle="modal" data-bs-target="#updatePrelevements" className="fa fa-edit btn btn-primary"></button>
-                                                        </>
-                                                    )
-                                                }
+                                                <>
+                                                    <button onClick={ () => Deleteprelevement(e.id)} className="fa fa-edit btn btn-danger"></button>&nbsp;
+                                                    <button onClick={() => UpdateId(e.id)}  data-bs-toggle="modal" data-bs-target="#updatePrelevements" className="fa fa-edit btn btn-primary"></button>
+                                                </>
                                             </td>
                                                    
                                         </tr>

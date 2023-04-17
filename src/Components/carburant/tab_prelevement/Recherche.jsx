@@ -8,32 +8,37 @@ const [fin, setfin] = useState("");
 const [datax, setdata] = useState([]);
 const [loading, setLoading] = useState(false);
 let n = 1
-const url = `http://localhost:5000/api/recherche_consomation/${debut}/${fin}`;	
+	
 let token = `Bearer ${localStorage.getItem("token")}` ;
 
 const RechercheBtn = () => {
+        const sites = JSON.parse(localStorage.getItem("site"))
         setLoading(true)
-        axios.get(url,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
-                }
-            }
-        ).then((response) => {
-                setdata(response.data.data);
-                setLoading(false)
-        }).catch((error) => {
-            if(error.response.status === 404){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'error',
-                    text: 'Veillez choisir une date de debut et de fin !!!',
+        if(sites != ""){
+            sites.map((s) => {
+                axios.get(`http://localhost:5000/api/recherche_consomation/${debut}/${fin}/${s.idSite}`,
+                    {
+                        headers : {
+                            Accept: 'application/json',
+                            'Content-Type' : 'application/json',
+                            Authorization : token
+                        }
+                    }
+                ).then((response) => {
+                        setdata(response.data.data);
+                        setLoading(false)
+                }).catch((error) => {
+                    if(error.response.status === 404){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'error',
+                            text: 'Veillez choisir une date de debut et de fin !!!',
+                        })
+                    }
+                    setLoading(false)
                 })
-            }
-            setLoading(false)
-        })
+            })
+        }
 }
     return(
         <div class="card">
@@ -60,7 +65,7 @@ const RechercheBtn = () => {
                           <th>N°</th>
                           <th>immatriculation</th>
                           <th>Utilisateur</th>
-                          <th>Matricule</th>
+                          <th>Date</th>
                           <th>Qte</th>
                           <th>Kilometrage</th>
                         </tr>
@@ -70,12 +75,13 @@ const RechercheBtn = () => {
                             datax.map((e) => {
                                 return (
                                     <tr>
-                                        <td>{ n++}</td>
+                                         <td>{n++}</td>
                                         <td>{e.immatriculation}</td>
-                                        <td>{e.user}</td>
-                                        <td>{e.matricule_ch}</td>
+                                        <td>{e.nom}</td>
+                                        <td>{e.date_plein}</td>
                                         <td>{e.qteplein}</td>
                                         <td>{e.kilometrage}</td>
+                                            
                                     </tr>
                                 );
                             })

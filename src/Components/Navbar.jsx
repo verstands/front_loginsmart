@@ -287,18 +287,18 @@ const Navbar = () => {
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i
+                  ><i className="mdi mdi-ev-station"></i
                   ><span className="hide-menu">Carburant </span></a
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <Link to="/carburant_vehicule" className="sidebar-link"
-                      ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Vehicule </span></Link>
+                    <a href="/carburant_vehicule" className="sidebar-link"
+                      ><i className="mdi mdi-car-wash"></i
+                      ><span className="hide-menu"> Vehicule </span></a>
                   </li>
                   <li className="sidebar-item">
                     <Link to="/generateur_vehicule" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
+                      ><i className="mdi mdi-settings-box"></i
                       ><span className="hide-menu"> Generateurs </span></Link>
                   </li>
                   <li className="sidebar-item">
@@ -308,7 +308,7 @@ const Navbar = () => {
                   </li>
                   <li className="sidebar-item">
                     <a href="{{route('carburant_budget')}}" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
+                      ><i className="mdi mdi-led-on"></i
                       ><span className="hide-menu"> Budget </span></a
                     >
                   </li>
@@ -324,14 +324,14 @@ const Navbar = () => {
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <Link to="/vehicule_maintenance" className="sidebar-link"
+                    <a href="/vehicule_maintenance" className="sidebar-link"
                       ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Vehicule </span></Link>
+                      ><span className="hide-menu"> Vehicule </span></a>
                   </li>
                   <li className="sidebar-item">
-                    <Link to="/Generateur_maintenace" className="sidebar-link"
+                    <a href="/Generateur_maintenace" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Generateurs </span></Link>
+                      ><span className="hide-menu"> Generateurs </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('maintenance_rapport')}}" className="sidebar-link"
@@ -357,9 +357,9 @@ const Navbar = () => {
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <Link to="/editio_vehicule" className="sidebar-link"
+                    <a href="/editio_vehicule" className="sidebar-link"
                       ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Edition </span></Link>
+                      ><span className="hide-menu"> Edition </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('vehicule_affectation')}}" className="sidebar-link"
@@ -391,14 +391,14 @@ const Navbar = () => {
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <Link to="/edition" className="sidebar-link"
+                    <a href="/edition" className="sidebar-link"
                       ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Edition </span></Link>
+                      ><span className="hide-menu"> Edition </span></a>
                   </li>
                   <li className="sidebar-item">
-                    <Link to="/affectation_general" className="sidebar-link"
+                    <a href="/affectation_general" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Affectations </span></Link
+                      ><span className="hide-menu"> Affectations </span></a
                     >
                   </li>
                   <li className="sidebar-item">
@@ -424,9 +424,9 @@ const Navbar = () => {
                   <span className="hide-menu">Personnel </span></a>
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <Link to="/personnelp" className="sidebar-link"
+                    <a href="/personnelp" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Personnel </span></Link>
+                      ><span className="hide-menu"> Personnel </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="form-wizard.html" className="sidebar-link"
@@ -452,19 +452,19 @@ const Navbar = () => {
                             >
                             <ul aria-expanded="false" className="collapse first-level">
                               <li className="sidebar-item">
-                                <Link to="/location" className="sidebar-link"
+                                <a href="/location" className="sidebar-link"
                                   ><i className="mdi mdi-note-outline"></i
-                                  ><span className="hide-menu"> Localisation </span></Link>
+                                  ><span className="hide-menu"> Localisation </span></a>
                               </li>
                               <li className="sidebar-item">
-                                <Link to="/Personnel" className="sidebar-link"
+                                <a href="/Personnel" className="sidebar-link"
                                   ><i className="mdi mdi-note-plus"></i>
-                                  <span className="hide-menu"> Personnel </span></Link>
+                                  <span className="hide-menu"> Personnel </span></a>
                               </li>
                               <li className="sidebar-item">
-                                <Link to="/ajouterUtilisateur" className="sidebar-link"
+                                <a href="/ajouterUtilisateur" className="sidebar-link"
                                   ><i className="fa fa-user"></i
-                                  ><span className="hide-menu"> Utiliasteurs </span></Link>
+                                  ><span className="hide-menu"> Utiliasteurs </span></a>
                               </li>
                               <li className="sidebar-item">
                                 <a href="form-wizard.html" className="sidebar-link"
