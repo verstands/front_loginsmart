@@ -7,20 +7,25 @@ const AffeichageTous_generateur = () => {
     let token = `Bearer ${localStorage.getItem("token")}` ;
     let n = 1
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/pleingen`,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
-                }
-            }
-        ).then((response) => {
-            setplain(response.data.data);
-            setLoading(false);
-        }).catch((error) => {
-            alert(error)
-        })
+        const sites = JSON.parse(localStorage.getItem("site"))
+        if(sites != ""){
+            sites.map((sit) => {
+              axios.get(`http://localhost:5000/api/pleingen/${sit.idSite}`,
+              {
+                  headers : {
+                      Accept: 'application/json',
+                      'Content-Type' : 'application/json',
+                      Authorization : token
+                  }
+              }
+              ).then((response) => {
+                  setplain(response.data.data);
+                  setLoading(false);
+              }).catch((error) => {
+                  alert(error)
+              })
+            })
+        }
     }, [])
    return (
         <>

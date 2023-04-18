@@ -307,7 +307,7 @@ const Navbar = () => {
                       ><span className="hide-menu"> Rapport </span></Link>
                   </li>
                   <li className="sidebar-item">
-                    <a href="{{route('carburant_budget')}}" className="sidebar-link"
+                    <a href="/budget_carburant" className="sidebar-link"
                       ><i className="mdi mdi-led-on"></i
                       ><span className="hide-menu"> Budget </span></a
                     >
@@ -362,7 +362,7 @@ const Navbar = () => {
                       ><span className="hide-menu"> Edition </span></a>
                   </li>
                   <li className="sidebar-item">
-                    <a href="{{ route('vehicule_affectation')}}" className="sidebar-link"
+                    <a href="/affectation_vehicule" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
                       ><span className="hide-menu"> Affactations </span></a
                     >
@@ -429,13 +429,13 @@ const Navbar = () => {
                       ><span className="hide-menu"> Personnel </span></a>
                   </li>
                   <li className="sidebar-item">
-                    <a href="form-wizard.html" className="sidebar-link"
+                    <a href="/conge_personnel" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
                       ><span className="hide-menu"> Conges </span></a
                     >
                   </li>
                   <li className="sidebar-item">
-                    <a href="form-wizard.html" className="sidebar-link"
+                    <a href="/affecter_personnel" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
                       ><span className="hide-menu"> Affecter </span></a
                     >
@@ -467,7 +467,7 @@ const Navbar = () => {
                                   ><span className="hide-menu"> Utiliasteurs </span></a>
                               </li>
                               <li className="sidebar-item">
-                                <a href="form-wizard.html" className="sidebar-link"
+                                <a href="/fournisseur" className="sidebar-link"
                                   ><i className="mdi mdi-note-plus"></i
                                   ><span className="hide-menu"> Fournisseurs </span></a
                                 >
@@ -485,13 +485,13 @@ const Navbar = () => {
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
-                    <a href="form-basic.html" className="sidebar-link"
+                    <a href="/acheter" className="sidebar-link"
                       ><i className="mdi mdi-note-outline"></i
                       ><span className="hide-menu"> Acheter </span></a
                     >
                   </li>
                   <li className="sidebar-item">
-                    <a href="form-wizard.html" className="sidebar-link"
+                    <a href="/vente" className="sidebar-link"
                       ><i className="mdi mdi-note-plus"></i
                       ><span className="hide-menu"> Les achats </span></a
                     >

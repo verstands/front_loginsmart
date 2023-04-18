@@ -15,6 +15,13 @@ import Generateur_vehicule from "../Components/carburant/generateur";
 import Rapport_carburant from "../Components/carburant/rapport_carburant";
 import Vehicule_maintenance from "../Components/maintenance/vehicule";
 import Generateur_maintenace from "../Components/maintenance/generateur";
+import Affectation_vehicule from "../Components/vehicule/affectation";
+import Conge_personnel from "../Components/personnel/conge";
+import Affecter_personnel from "../Components/personnel/affecter_personnel";
+import Fournisseur from "../Components/admin/fournisseur";
+import Acheter from "../Components/approvisionnemment/acheter";
+import Vente from "../Components/approvisionnemment/vente";
+import Budget_carburant from "../Components/carburant/budget";
 
 class Routers extends Component{
     render(){
@@ -35,6 +42,13 @@ class Routers extends Component{
                 <Route path="/generateur_vehicule" element={<Generateur_vehicule />} />
                 <Route path="/vehicule_maintenance" element={<Vehicule_maintenance />} />
                 <Route path="/Generateur_maintenace" element={<Generateur_maintenace />} />
+                <Route path="/affectation_vehicule" element={<Affectation_vehicule />} />
+                <Route path="/conge_personnel" element={<Conge_personnel />} />
+                <Route path="/affecter_personnel" element={<Affecter_personnel />} />
+                <Route path="/fournisseur" element={<Fournisseur />} />
+                <Route path="/acheter" element={<Acheter />} />
+                <Route path="/vente" element={<Vente />} />
+                <Route path="/budget_carburant" element={<Budget_carburant />} />
             </Routes>
         )
     }
