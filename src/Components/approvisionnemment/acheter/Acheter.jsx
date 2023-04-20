@@ -110,7 +110,7 @@ const Acheter_approvisionnement = () => {
                                 </tr>
                             </thead>
                             <tbody>
-
+                                
                             </tbody>
                         </table>
                     </div>
