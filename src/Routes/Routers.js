@@ -23,22 +23,22 @@ import Acheter from "../Components/approvisionnemment/acheter";
 import Vente from "../Components/approvisionnemment/vente";
 import Budget_carburant from "../Components/carburant/budget";
 
-class Routers extends Component{
-    render(){
-        return(
+class Routers extends Component {
+    render() {
+        return (
             <Routes>
-                <Route path="/" element={<LoginA />}  />
-                <Route path="/dashboad" element={<Dashboad />}  />
-                <Route path="/carburant_vehicule" element={<Vehicule_carburant />}  />
-                <Route path="/ajouterUtilisateur" element={<UserAdd />}  />
-                <Route path="/Personnel" element={<Personnel />}  />
-                <Route path="/location" element={<Location />}  />
-                <Route path="/personnelp" element={<PersonneP />}  />
-                <Route path="/edition" element={<Edition />}  />
-                <Route path="/affectation_general" element={<AffectationGeneral />}  />
-                <Route path="/editio_vehicule" element={<Edition_vehicule />}  />
-                <Route path="/deletesuccess" element={<Deletes />}  />
-                <Route path="/rapport_carburant" element={<Rapport_carburant />}  />
+                <Route path="/" element={<LoginA />} />
+                <Route path="/dashboad" element={<Dashboad />} />
+                <Route path="/carburant_vehicule" element={<Vehicule_carburant />} />
+                <Route path="/ajouterUtilisateur" element={<UserAdd />} />
+                <Route path="/Personnel" element={<Personnel />} />
+                <Route path="/location" element={<Location />} />
+                <Route path="/personnelp" element={<PersonneP />} />
+                <Route path="/edition" element={<Edition />} />
+                <Route path="/affectation_general" element={<AffectationGeneral />} />
+                <Route path="/editio_vehicule" element={<Edition_vehicule />} />
+                <Route path="/deletesuccess" element={<Deletes />} />
+                <Route path="/rapport_carburant" element={<Rapport_carburant />} />
                 <Route path="/generateur_vehicule" element={<Generateur_vehicule />} />
                 <Route path="/vehicule_maintenance" element={<Vehicule_maintenance />} />
                 <Route path="/Generateur_maintenace" element={<Generateur_maintenace />} />

@@ -18,6 +18,16 @@ const Acheter = () => {
                            <span class="hidden-xs-down"><i class="mdi mdi-bulletin-board"></i>Acheter</span></a
                            >
                        </li>
+                       <li class="nav-item">
+                           <a
+                           class="nav-link active"
+                           data-bs-toggle="tab"
+                           href="#lesachat"
+                           role="tab"
+                           ><span class="hidden-sm-up"></span>
+                           <span class="hidden-xs-down"><i class="mdi mdi-bulletin-board"></i>Les achats</span></a
+                           >
+                       </li>
                    </ul>
                    <div class="tab-content tabcontent-border">
                        <div class="tab-pane active" id="home" role="tabpanel">
@@ -25,7 +35,7 @@ const Acheter = () => {
                         
                            </div>
                        </div>
-                       <div class="tab-pane p-20" id="ville" role="tabpanel">
+                       <div class="tab-pane p-20" id="lesachat" role="tabpanel">
                           
                        </div>
                    </div>

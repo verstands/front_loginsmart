@@ -50,7 +50,6 @@ const Intervention = () => {
                
             }).catch( (err) => {
                 alert('Erreur' + err);
-                console.log('erreur' + err)
             }); 
         }
     }
@@ -72,20 +71,25 @@ const Intervention = () => {
     }, [])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/intervention`,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
-                }
-            }
-        ).then((response) => {
-            setintervention(response.data.data);
-            setLoading(false);
-        }).catch((error) => {
-            alert(error)
-        })
+        const sites = JSON.parse(localStorage.getItem("site"))
+        if(sites != ""){
+            sites.map((sit) => {
+              axios.get(`http://localhost:5000/api/intervention/${sit.idSite}`,
+              {
+                  headers : {
+                      Accept: 'application/json',
+                      'Content-Type' : 'application/json',
+                      Authorization : token
+                  }
+              }
+              ).then((response) => {
+                setintervention(response.data.data);
+                  setLoading(false);
+              }).catch((error) => {
+                  alert(error + "sss")
+              })
+            })
+        }
     }, [])
     useEffect(() => {
         axios.get(`http://localhost:5000/api/vehicule`,

@@ -22,7 +22,7 @@ const AffeichageTous_generateur = () => {
                   setplain(response.data.data);
                   setLoading(false);
               }).catch((error) => {
-                  alert(error)
+                  alert(error + 'd')
               })
             })
         }

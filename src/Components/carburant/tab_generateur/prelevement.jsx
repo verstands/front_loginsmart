@@ -26,27 +26,62 @@ const Prelevement_generateur = () => {
                 text: 'Veillez remplir tous les champs !!!',
             })
         }else{
-            alert(numBon + '*' + groupeAgence + '*' + dates + '*' + indexs + '*' + Qte + '*' + carburant)
+           
+                    setloadingD(true)
+                    axios.post(`http://localhost:5000/api/pleingen`,{
+                        numero : numBon,
+                        agent : groupeAgence,
+                        date_plein : dates,
+                        heures : indexs,
+                        qteplein : Qte,
+                        type_carb : carburant,
+                    },
+                    {
+                        headers : {
+                            Accept: 'application/json',
+                            'Content-Type' : 'application/json',
+                            Authorization : token
+                        }
+                    }
+                    ).then((response) => {
+                        Swal.fire({
+                            icon : 'success',
+                            text : 'Success',
+                            confirmButtonText: 'OK'
+                        });
+                    }).catch((error) => {
+                        alert(error)
+                    })
+                    setloadingD(false)
+
+               
         }
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/pleingen`,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
+        const sites = JSON.parse(localStorage.getItem("site"))
+        if(sites != ""){
+            sites.map((sit) => {
+                axios.get(`http://localhost:5000/api/pleingen/${sit.idSite}`,
+                {
+                    headers : {
+                        Accept: 'application/json',
+                        'Content-Type' : 'application/json',
+                        Authorization : token
+                    }
                 }
-            }
-        ).then((response) => {
-            setpleingen(response.data.data);
-            setLoading(false);
-        }).catch((error) => {
-            alert(error)
-        })
+                ).then((response) => {
+                    setpleingen(response.data.data);
+                    setLoading(false);
+                }).catch((error) => {
+                    alert(error)
+                })
+            })
+        }
     }, [])
     useEffect(() => {
+        const sites = JSON.parse(localStorage.getItem("site"))
+
         axios.get(`http://localhost:5000/api/agence`,
             {
                 headers : {
@@ -170,8 +205,8 @@ const Prelevement_generateur = () => {
                                     <label for="">Groupe Agence</label>
                                         <select onChange={(e) => setgroupeAgence(e.target.value)}   className="form-control">
                                                 {
-                                                    agence.map((e) => {
-                                                        return <option value={e.id}>{e.nom_ag}</option>
+                                                    agence.map((ga) => {
+                                                        return <option key={ga.id} value={ga.id}>{ga.nom_ag}</option>
                                                     })
                                                 }
                                         </select>

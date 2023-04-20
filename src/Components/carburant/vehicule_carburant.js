@@ -3,7 +3,9 @@ import Navbar from "../Navbar";
 import Prelevement from "./tab_prelevement/prelevement";
 import AffchageTous from "./tab_prelevement/AffichageTous";
 import Consomation from "./tab_prelevement/consomation";
-import Recherche from "./tab_prelevement/Recherche";
+import Search_vehicule from "./tab_prelevement/search";
+import Recherche_carburant from "./tab_prelevement/Recherche";
+
 const Vehicule_carburant = () => {
     return (
         <>
@@ -12,56 +14,56 @@ const Vehicule_carburant = () => {
                 <div class="row">
                     <div class="card">
                         <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a
-                            class="nav-link active"
-                            data-bs-toggle="tab"
-                            href="#home"
-                            role="tab"
-                            ><span class="hidden-sm-up"></span>
-                            <span class="hidden-xs-down"><i class="fas fa-save"></i>Prelevement</span></a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                            class="nav-link"
-                            data-bs-toggle="tab"
-                            href="#profile"
-                            role="tab"
-                            ><span class="hidden-sm-up"></span>
-                            <span class="hidden-xs-down"><i class="fas fa-book"></i> Afficher tous</span></a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                            class="nav-link"
-                            data-bs-toggle="tab"
-                            href="#messages"
-                            role="tab"
-                            ><span class="hidden-sm-up"></span>
-                            <span class="hidden-xs-down"><i class="fas fa-search"></i> Recherche mutliple</span></a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                            class="nav-link"
-                            data-bs-toggle="tab"
-                            href="#consomation"
-                            role="tab"
-                            ><span class="hidden-sm-up"></span>
-                            <span class="hidden-xs-down"><i class="fas fa-history"></i> Consomation</span></a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                            class="nav-link"
-                            data-bs-toggle="tab"
-                            href="#rech"
-                            role="tab"
-                            ><span class="hidden-sm-up"></span>
-                            <span class="hidden-xs-down"><i class="fas fa-search"></i>Recherche</span></a
-                            >
-                        </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    data-bs-toggle="tab"
+                                    href="#home"
+                                    role="tab"
+                                ><span class="hidden-sm-up"></span>
+                                    <span class="hidden-xs-down"><i class="fas fa-save"></i>Prelevement</span></a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    data-bs-toggle="tab"
+                                    href="#profile"
+                                    role="tab"
+                                ><span class="hidden-sm-up"></span>
+                                    <span class="hidden-xs-down"><i class="fas fa-book"></i> Afficher tous</span></a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    data-bs-toggle="tab"
+                                    href="#messages"
+                                    role="tab"
+                                ><span class="hidden-sm-up"></span>
+                                    <span class="hidden-xs-down"><i class="fas fa-search"></i> Recherche mutliple</span></a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    data-bs-toggle="tab"
+                                    href="#consomation"
+                                    role="tab"
+                                ><span class="hidden-sm-up"></span>
+                                    <span class="hidden-xs-down"><i class="fas fa-history"></i> Consomation</span></a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    data-bs-toggle="tab"
+                                    href="#rech"
+                                    role="tab"
+                                ><span class="hidden-sm-up"></span>
+                                    <span class="hidden-xs-down"><i class="fas fa-search"></i>Recherche</span></a
+                                >
+                            </li>
                         </ul>
                         <div class="tab-content tabcontent-border">
                             <div class="tab-pane active" id="home" role="tabpanel">
@@ -75,18 +77,18 @@ const Vehicule_carburant = () => {
                                 </div>
                             </div>
                             <div class="tab-pane p-20" id="messages" role="tabpanel">
-                               <Consomation />
+                                <Recherche_carburant />
                             </div>
                             <div class="tab-pane p-20" id="consomation" role="tabpanel">
-                                 <Recherche />
+                                <Consomation />
                             </div>
-                               
                             <div class="tab-pane p-20" id="rech" role="tabpanel">
+                                <Search_vehicule />
+                            </div>
                         </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </>
     );
 }

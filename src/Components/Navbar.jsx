@@ -2,32 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    let Stat = `${localStorage.getItem("statut")}`;
-    return (
-        <>
-          <header className="topbar" data-navbarbg="skin5">
+  let Stat = `${localStorage.getItem("statut")}`;
+  return (
+    <>
+      <header className="topbar" data-navbarbg="skin5">
         <nav className="navbar top-navbar navbar-expand-md navbar-dark">
           <div className="navbar-header" data-logobg="skin5">
             <a className="navbar-brand" href="index.html" />
-              <b className="logo-icon ps-2">
-                <img
-                  src="../assets/images/logo-icon.png"
-                  alt="homepage"
-                  className="light-logo"
-                  width="25"
-                />
-              </b>
-              <span className="logo-text ms-2">
-                <img
-                  src="../assets/images/logo-text.png"
-                  alt="homepage"
-                  className="light-logo"
-                />
-              </span>
+            <b className="logo-icon ps-2">
+              <img
+                src="../assets/images/logo-icon.png"
+                alt="homepage"
+                className="light-logo"
+                width="25"
+              />
+            </b>
+            <span className="logo-text ms-2">
+              <img
+                src="../assets/images/logo-text.png"
+                alt="homepage"
+                className="light-logo"
+              />
+            </span>
             <a
               className="nav-toggler waves-effect waves-light d-block d-md-none"
               href="javascript:void(0)"
-              ><i className="ti-menu ti-close"></i
+            ><i className="ti-menu ti-close"></i
             ></a>
           </div>
           <div
@@ -41,7 +41,7 @@ const Navbar = () => {
                   className="nav-link sidebartoggler waves-effect waves-light"
                   href="javascript:void(0)"
                   data-sidebartype="mini-sidebar"
-                  ><i className="mdi mdi-menu font-24"></i
+                ><i className="mdi mdi-menu font-24"></i
                 ></a>
               </li>
               <li className="nav-item dropdown">
@@ -54,10 +54,10 @@ const Navbar = () => {
                   aria-expanded="false"
                 >
                   <span className="d-none d-md-block"
-                    >Create New <i className="fa fa-angle-down"></i
+                  >Create New <i className="fa fa-angle-down"></i
                   ></span>
                   <span className="d-block d-md-none"
-                    ><i className="fa fa-plus"></i
+                  ><i className="fa fa-plus"></i
                   ></span>
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,7 +73,7 @@ const Navbar = () => {
                 <a
                   className="nav-link waves-effect waves-dark"
                   href="javascript:void(0)"
-                  ><i className="mdi mdi-magnify fs-4"></i
+                ><i className="mdi mdi-magnify fs-4"></i
                 ></a>
                 <form className="app-search position-absolute">
                   <input
@@ -138,12 +138,12 @@ const Navbar = () => {
                                 align-items-center
                                 justify-content-center
                               "
-                              ><i className="mdi mdi-calendar text-white fs-4"></i
+                            ><i className="mdi mdi-calendar text-white fs-4"></i
                             ></span>
                             <div className="ms-2">
                               <h5 className="mb-0">Event today</h5>
                               <span className="mail-desc"
-                                >Just a reminder that event</span
+                              >Just a reminder that event</span
                               >
                             </div>
                           </div>
@@ -157,12 +157,12 @@ const Navbar = () => {
                                 align-items-center
                                 justify-content-center
                               "
-                              ><i className="mdi mdi-settings fs-4"></i
+                            ><i className="mdi mdi-settings fs-4"></i
                             ></span>
                             <div className="ms-2">
                               <h5 className="mb-0">Settings</h5>
                               <span className="mail-desc"
-                                >You can customize this template</span
+                              >You can customize this template</span
                               >
                             </div>
                           </div>
@@ -176,12 +176,12 @@ const Navbar = () => {
                                 align-items-center
                                 justify-content-center
                               "
-                              ><i className="mdi mdi-account fs-4"></i
+                            ><i className="mdi mdi-account fs-4"></i
                             ></span>
                             <div className="ms-2">
                               <h5 className="mb-0">Pavan kumar</h5>
                               <span className="mail-desc"
-                                >Just see the my admin!</span
+                              >Just see the my admin!</span
                               >
                             </div>
                           </div>
@@ -195,12 +195,12 @@ const Navbar = () => {
                                 align-items-center
                                 justify-content-center
                               "
-                              ><i className="mdi mdi-link fs-4"></i
+                            ><i className="mdi mdi-link fs-4"></i
                             ></span>
                             <div className="ms-2">
                               <h5 className="mb-0">Luanch Admin</h5>
                               <span className="mail-desc"
-                                >Just see the my new admin!</span
+                              >Just see the my new admin!</span
                               >
                             </div>
                           </div>
@@ -237,29 +237,29 @@ const Navbar = () => {
                   aria-labelledby="navbarDropdown"
                 >
                   <a className="dropdown-item" href="javascript:void(0)"
-                    ><i className="mdi mdi-account me-1 ms-1"></i> My Profile</a
+                  ><i className="mdi mdi-account me-1 ms-1"></i> My Profile</a
                   >
                   <a className="dropdown-item" href="javascript:void(0)"
-                    ><i className="mdi mdi-wallet me-1 ms-1"></i> My Balance</a
+                  ><i className="mdi mdi-wallet me-1 ms-1"></i> My Balance</a
                   >
                   <a className="dropdown-item" href="javascript:void(0)"
-                    ><i className="mdi mdi-email me-1 ms-1"></i> Inbox</a
+                  ><i className="mdi mdi-email me-1 ms-1"></i> Inbox</a
                   >
                   <div className="dropdown-divider"></div>
                   <a className="dropdown-item" href="javascript:void(0)"
-                    ><i className="mdi mdi-settings me-1 ms-1"></i> Account
+                  ><i className="mdi mdi-settings me-1 ms-1"></i> Account
                     Setting</a
                   >
                   <div className="dropdown-divider"></div>
                   <a className="dropdown-item" href="javascript:void(0)"
-                    ><i className="fa fa-power-off me-1 ms-1"></i> Logout</a
+                  ><i className="fa fa-power-off me-1 ms-1"></i> Logout</a
                   >
                   <div className="dropdown-divider"></div>
                   <div className="ps-4 p-10">
                     <a
                       href="javascript:void(0)"
                       className="btn btn-sm btn-success btn-rounded text-white"
-                      >View Profile</a
+                    >View Profile</a
                     >
                   </div>
                 </ul>
@@ -267,7 +267,7 @@ const Navbar = () => {
             </ul>
           </div>
         </nav>
-      </header> 
+      </header>
       <aside className="left-sidebar" data-sidebarbg="skin5">
 
         <div className="scroll-sidebar">
@@ -278,8 +278,8 @@ const Navbar = () => {
                   className="sidebar-link waves-effect waves-dark sidebar-link"
                   to="/dashboad"
                   aria-expanded="false"
-                  ><i className="mdi mdi-view-dashboard"></i
-                  ><span className="hide-menu">Tableau de bord</span></Link
+                ><i className="mdi mdi-view-dashboard"></i
+                ><span className="hide-menu">Tableau de bord</span></Link
                 >
               </li>
               <li className="sidebar-item">
@@ -287,29 +287,29 @@ const Navbar = () => {
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-ev-station"></i
-                  ><span className="hide-menu">Carburant </span></a
+                ><i className="mdi mdi-ev-station"></i
+                ><span className="hide-menu">Carburant </span></a
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
                     <a href="/carburant_vehicule" className="sidebar-link"
-                      ><i className="mdi mdi-car-wash"></i
-                      ><span className="hide-menu"> Vehicule </span></a>
+                    ><i className="mdi mdi-car-wash"></i
+                    ><span className="hide-menu"> Vehicule </span></a>
                   </li>
                   <li className="sidebar-item">
                     <Link to="/generateur_vehicule" className="sidebar-link"
-                      ><i className="mdi mdi-settings-box"></i
-                      ><span className="hide-menu"> Generateurs </span></Link>
+                    ><i className="mdi mdi-settings-box"></i
+                    ><span className="hide-menu"> Generateurs </span></Link>
                   </li>
                   <li className="sidebar-item">
                     <Link to="/rapport_carburant" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Rapport </span></Link>
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Rapport </span></Link>
                   </li>
                   <li className="sidebar-item">
                     <a href="/budget_carburant" className="sidebar-link"
-                      ><i className="mdi mdi-led-on"></i
-                      ><span className="hide-menu"> Budget </span></a
+                    ><i className="mdi mdi-led-on"></i
+                    ><span className="hide-menu"> Budget </span></a
                     >
                   </li>
                 </ul>
@@ -319,30 +319,30 @@ const Navbar = () => {
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i
-                  ><span className="hide-menu">Maintenance </span></a
+                ><i className="mdi mdi-receipt"></i
+                ><span className="hide-menu">Maintenance </span></a
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
                     <a href="/vehicule_maintenance" className="sidebar-link"
-                      ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Vehicule </span></a>
+                    ><i className="mdi mdi-note-outline"></i
+                    ><span className="hide-menu"> Vehicule </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="/Generateur_maintenace" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Generateurs </span></a>
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Generateurs </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('maintenance_rapport')}}" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Rapport </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Rapport </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('maintenance_budget')}}" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Budget </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Budget </span></a
                     >
                   </li>
                 </ul>
@@ -352,31 +352,31 @@ const Navbar = () => {
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i
-                  ><span className="hide-menu">Vehicule </span></a
+                ><i className="mdi mdi-receipt"></i
+                ><span className="hide-menu">Vehicule </span></a
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
                     <a href="/editio_vehicule" className="sidebar-link"
-                      ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Edition </span></a>
+                    ><i className="mdi mdi-note-outline"></i
+                    ><span className="hide-menu"> Edition </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="/affectation_vehicule" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Affactations </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Affactations </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('vehicule_assurance')}}" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Assurances </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Assurances </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="{{ route('vehicule_sinistre')}}" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Sinistres & Inspection journalieres </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Sinistres & Inspection journalieres </span></a
                     >
                   </li>
                 </ul>
@@ -386,31 +386,31 @@ const Navbar = () => {
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i
-                  ><span className="hide-menu">Generateur  </span></a
+                ><i className="mdi mdi-receipt"></i
+                ><span className="hide-menu">Generateur  </span></a
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
                     <a href="/edition" className="sidebar-link"
-                      ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Edition </span></a>
+                    ><i className="mdi mdi-note-outline"></i
+                    ><span className="hide-menu"> Edition </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="/affectation_general" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Affectations </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Affectations </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="form-wizard.html" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Assurances </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Assurances </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="form-wizard.html" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Sinistres & Inspection journalieres </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Sinistres & Inspection journalieres </span></a
                     >
                   </li>
                 </ul>
@@ -420,80 +420,80 @@ const Navbar = () => {
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i>
+                ><i className="mdi mdi-receipt"></i>
                   <span className="hide-menu">Personnel </span></a>
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
                     <a href="/personnelp" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Personnel </span></a>
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Personnel </span></a>
                   </li>
                   <li className="sidebar-item">
                     <a href="/conge_personnel" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Conges </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Conges </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="/affecter_personnel" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Affecter </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Affecter </span></a
                     >
                   </li>
                 </ul>
               </li>
-                      <li className="sidebar-item">
-                           <a
-                            className="sidebar-link has-arrow waves-effect waves-dark"
-                            href="javascript:void(0)"
-                            aria-expanded="false"
-                            ><i className="mdi mdi-receipt"></i
-                            ><span className="hide-menu">Administrateur </span></a
-                            >
-                            <ul aria-expanded="false" className="collapse first-level">
-                              <li className="sidebar-item">
-                                <a href="/location" className="sidebar-link"
-                                  ><i className="mdi mdi-note-outline"></i
-                                  ><span className="hide-menu"> Localisation </span></a>
-                              </li>
-                              <li className="sidebar-item">
-                                <a href="/Personnel" className="sidebar-link"
-                                  ><i className="mdi mdi-note-plus"></i>
-                                  <span className="hide-menu"> Personnel </span></a>
-                              </li>
-                              <li className="sidebar-item">
-                                <a href="/ajouterUtilisateur" className="sidebar-link"
-                                  ><i className="fa fa-user"></i
-                                  ><span className="hide-menu"> Utiliasteurs </span></a>
-                              </li>
-                              <li className="sidebar-item">
-                                <a href="/fournisseur" className="sidebar-link"
-                                  ><i className="mdi mdi-note-plus"></i
-                                  ><span className="hide-menu"> Fournisseurs </span></a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-              
               <li className="sidebar-item">
                 <a
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   href="javascript:void(0)"
                   aria-expanded="false"
-                  ><i className="mdi mdi-receipt"></i
-                  ><span className="hide-menu">Approvisionnement </span></a
+                ><i className="mdi mdi-receipt"></i
+                ><span className="hide-menu">Administrateur </span></a
+                >
+                <ul aria-expanded="false" className="collapse first-level">
+                  <li className="sidebar-item">
+                    <a href="/location" className="sidebar-link"
+                    ><i className="mdi mdi-note-outline"></i
+                    ><span className="hide-menu"> Localisation </span></a>
+                  </li>
+                  <li className="sidebar-item">
+                    <a href="/Personnel" className="sidebar-link"
+                    ><i className="mdi mdi-note-plus"></i>
+                      <span className="hide-menu"> Personnel </span></a>
+                  </li>
+                  <li className="sidebar-item">
+                    <a href="/ajouterUtilisateur" className="sidebar-link"
+                    ><i className="fa fa-user"></i
+                    ><span className="hide-menu"> Utiliasteurs </span></a>
+                  </li>
+                  <li className="sidebar-item">
+                    <a href="/fournisseur" className="sidebar-link"
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Fournisseurs </span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li className="sidebar-item">
+                <a
+                  className="sidebar-link has-arrow waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                ><i className="mdi mdi-receipt"></i
+                ><span className="hide-menu">Approvisionnement </span></a
                 >
                 <ul aria-expanded="false" className="collapse first-level">
                   <li className="sidebar-item">
                     <a href="/acheter" className="sidebar-link"
-                      ><i className="mdi mdi-note-outline"></i
-                      ><span className="hide-menu"> Acheter </span></a
+                    ><i className="mdi mdi-note-outline"></i
+                    ><span className="hide-menu"> Acheter </span></a
                     >
                   </li>
                   <li className="sidebar-item">
                     <a href="/vente" className="sidebar-link"
-                      ><i className="mdi mdi-note-plus"></i
-                      ><span className="hide-menu"> Les achats </span></a
+                    ><i className="mdi mdi-note-plus"></i
+                    ><span className="hide-menu"> Les achats </span></a
                     >
                   </li>
                 </ul>
@@ -501,9 +501,9 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-      </aside> 
-        </>
-    );
+      </aside>
+    </>
+  );
 }
 
 export default Navbar;

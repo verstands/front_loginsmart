@@ -8,8 +8,8 @@ const AffchageTous = () => {
     const [loadingD, setloadingD] = useState(false);
     const [update, setupdate] = useState([]);
     let n = 1
+    const sites = JSON.parse(localStorage.getItem("site"))
     useEffect(() => {
-        const sites = JSON.parse(localStorage.getItem("site"))
         if(sites != ""){
                 sites.map((sit) => {
                     axios.get(`http://localhost:5000/api/plein/${sit.idSite}`,

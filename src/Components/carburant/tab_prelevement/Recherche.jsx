@@ -2,13 +2,12 @@ import React ,{ useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const Recherche = () => {
+const Recherche_carburant = () => {
 const [debut, setdebut] = useState("");
 const [fin, setfin] = useState("");
 const [datax, setdata] = useState([]);
 const [loading, setLoading] = useState(false);
-let n = 1
-	
+let n = 1;
 let token = `Bearer ${localStorage.getItem("token")}` ;
 
 const RechercheBtn = () => {
@@ -41,7 +40,7 @@ const RechercheBtn = () => {
         }
 }
     return(
-        <div class="card">
+        <div class="card card-body">
            <br />
                 <div class="row">
                     <div class="col-md-3">
@@ -100,4 +99,4 @@ const RechercheBtn = () => {
         </div>
     );
 }
-export default Recherche;
+export default Recherche_carburant;
