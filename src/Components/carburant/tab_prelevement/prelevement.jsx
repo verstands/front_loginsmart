@@ -177,6 +177,7 @@ const Prelevement = () => {
                 <div className="card-body">
                     <h5 className="card-title"> <a href="" data-bs-toggle="modal" data-bs-target="#addadmin" className="btn btn-primary"> + Prelevement</a></h5>
                     <div className="table-responsive">
+                        <h3 className="text-center">Liste</h3>
                         <table
                             id="example" className="table table-striped"
                         >

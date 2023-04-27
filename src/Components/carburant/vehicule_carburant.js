@@ -68,7 +68,7 @@ const Vehicule_carburant = () => {
                         <div class="tab-content tabcontent-border">
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="p-20">
-                                    < Prelevement />
+                                    <Prelevement />
                                 </div>
                             </div>
                             <div class="tab-pane p-20" id="profile" role="tabpanel">

@@ -12,23 +12,26 @@ const Acheter_approvisionnement = () => {
     const [prixTotal, setprixTotal] = useState("");
     const [commentaire, setcommentaire] = useState("");
     let token = `Bearer ${localStorage.getItem("token")}`;
+    const [loading, setloading] = useState(true)
 
     const Enregister = () => {
-        if(numFact == "" || produit == "" || quantite == "" || prixTotal == "" || commentaire == ""){
+        if (numFact == "" || produit == "" || quantite == "" || prixTotal == "" || commentaire == "") {
             Swal.fire({
                 icon: 'error',
                 text: 'Veuillez remplir tous les champs',
             });
-        }else{
-            axios.post(`http://localhost:5000/api/acheter`,
+        } else {
+            axios.post(`http://localhost:5000/api/achat`,
                 {
                     num_fact: numFact,
                     immatriculation: immatriculations,
                     produit: produit,
                     qte: quantite,
+                    prix: prixTotal,
+                    observation: commentaire,
+                    code: numFact,
                     prixtotal: prixTotal,
-                    dates: dates,
-                    observation: commentaire
+
                 }, {
                 headers: {
                     Accept: 'application/json',
@@ -67,6 +70,7 @@ const Acheter_approvisionnement = () => {
         }
     }, [])
     useEffect(() => {
+        const sites = JSON.parse(localStorage.getItem("site"))
         sites.map((veh) => {
             axios.get(`http://localhost:5000/api/achat`,
                 {
@@ -78,17 +82,26 @@ const Acheter_approvisionnement = () => {
                 }
             ).then((response) => {
                 setacheter(response.data.data);
+                setloading(false)
             }).catch((error) => {
 
             })
         })
-        
+
     }, [])
     return (
         <>
             <div className="card">
                 <div className="card-body">
-                    <h5 className="card-title"> <a href="" data-bs-toggle="modal" data-bs-target="#addville" className="btn btn-primary"> + Acheter</a></h5>
+                    <div className="row">
+                        <div className="col-md-10">
+                            <h5 className="card-title"> <a href="" data-bs-toggle="modal" data-bs-target="#addville" className="btn btn-primary"> + Acheter</a></h5>
+                        </div>
+                        <div className="col-md-2">
+                            <h5 className="card-title"> <a href="" data-bs-toggle="modal" data-bs-target="#addville" className="btn btn-primary"> <i className="fa fa-spinner"></i> </a></h5>
+                        </div>
+                    </div>
+                    <h3 className="text-center">LISTE DE TOUS LES ACHATS VEHICULES</h3>
                     <div className="table-responsive">
                         <table
                             id="zero_config"
@@ -96,23 +109,42 @@ const Acheter_approvisionnement = () => {
                         >
                             <thead>
                                 <tr>
-                                    <th>N°</th>
                                     <th>Date</th>
                                     <th>Numero de facture</th>
                                     <th>Immatriculation</th>
-                                    <th>Marque</th>
                                     <th>Produit Acheté</th>
                                     <th>Quantité</th>
                                     <th>P.U.</th>
                                     <th>Prix total</th>
                                     <th>Commentaire</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                {
+                                    acheter.map((ach) => {
+                                        return (
+                                            <tr>
+                                                <td>{ach.num_fact}</td>
+                                                <td>{ach.immatriculation}</td>
+                                                <td>{ach.produit}</td>
+                                                <td>{ach.qte}</td>
+                                                <td>{ach.prix}</td>
+                                                <td>{ach.prix}</td>
+                                                <td>{ach.prixtotal}</td>
+                                                <td>{ach.observation}</td>
+                                            </tr>
+                                        );
+                                    })
+                                }
                             </tbody>
                         </table>
+                        <center>
+                            {
+                                loading === true && (
+                                    <p><i className="fa fa-pulse fa-spinner text-primary" style={{ fontSize: 40 }} ></i></p>
+                                )
+                            }
+                        </center>
                     </div>
                 </div>
             </div>
@@ -121,7 +153,7 @@ const Acheter_approvisionnement = () => {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Acheter + </h5>
+                            <h5 className="modal-title" id="exampleModalLabel">ENREGISTRER ACHAT DIVERS</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
@@ -132,7 +164,7 @@ const Acheter_approvisionnement = () => {
                                 </div>
                                 <div className="col-md-6">
                                     <label for="">Imatriculation</label>
-                                    <select onChange={(e) => setimmatriculations(e.target.value)}  className="form-control">
+                                    <select onChange={(e) => setimmatriculations(e.target.value)} className="form-control">
                                         {
                                             vehicule.map((item) => {
                                                 return (
@@ -148,7 +180,7 @@ const Acheter_approvisionnement = () => {
                                 </div>
                                 <div className="col-md-6">
                                     <label for="">Quantité</label>
-                                    <input type="number"  onChange={(e) => setquantite(e.target.value)} className="form-control" />
+                                    <input type="number" onChange={(e) => setquantite(e.target.value)} className="form-control" />
                                 </div>
                                 <div className="col-md-6">
                                     <label for="">Prix Total</label>

@@ -6,6 +6,8 @@ const Affiche_vehicule = () => {
     const [vehicule, setvehicule] = useState([]);
     const [loading, setLoading] = useState(true);
     let token = `Bearer ${localStorage.getItem("token")}` ;
+    const site = localStorage.getItem("site");
+    
     useEffect(() => {
         axios.get(`http://localhost:5000/api/vehicule`,
             {

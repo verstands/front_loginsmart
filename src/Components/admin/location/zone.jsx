@@ -41,19 +41,24 @@ const Zone = () => {
         }
     }
     useEffect(() => {
-        axios.get(url,
-            {
-                headers : {
-                    Accept: 'application/json',
-                    'Content-Type' : 'application/json',
-                    Authorization : token
-                }
-            }
-        ).then((response) => {
-            setZone(response.data.data);
-        }).catch((error) => {
-            alert(error)
-        })
+        const sites = JSON.parse(localStorage.getItem("site"))
+        if (sites != "") {
+            sites.map((zsitz) => {
+                axios.get(`http://localhost:5000/api/zone/${zsitz.idSite}`,
+                    {
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                            Authorization: token
+                        }
+                    }
+                ).then((response) => {
+                    setZone(response.data.data);
+                }).catch((error) => {
+                    alert("z")
+                })
+            })
+        }
     }, [])
 
     const DeleteZone = (id) => {

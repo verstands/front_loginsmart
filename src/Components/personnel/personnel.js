@@ -51,7 +51,7 @@ const PersonneP  = () => {
                                 </div>
                             </div>
                             <div class="tab-pane p-20" id="affecte" role="tabpanel">
-                                < Affecter/>
+                                <Affecter/>
                             </div>
                             <div class="tab-pane p-20" id="conge" role="tabpanel">
                                 <Conge />

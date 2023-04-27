@@ -490,12 +490,6 @@ const Navbar = () => {
                     ><span className="hide-menu"> Acheter </span></a
                     >
                   </li>
-                  <li className="sidebar-item">
-                    <a href="/vente" className="sidebar-link"
-                    ><i className="mdi mdi-note-plus"></i
-                    ><span className="hide-menu"> Les achats </span></a
-                    >
-                  </li>
                 </ul>
               </li>
             </ul>
